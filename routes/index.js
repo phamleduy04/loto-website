@@ -9,16 +9,18 @@ router.get('/', (req, res, next) => {
   const document = jsdom.window.document;
   for (let i = 0; i < 9; i++) createCointainer(document);
   const matrix = generateTable();
-  for (let i = 0; i < matrix.length; i++) {
-    matrix[i].forEach(el => appendNewThing(document, el, i));
-  }
-  fs.writeFileSync('test.html', document.documentElement.outerHTML);
+  for (let i = 0; i < matrix.length; i++) matrix[i].forEach(el => appendNewCell(document, el, i));
+  // fs.writeFileSync('test.html', document.documentElement.outerHTML);
   res.status(200).send(document.documentElement.outerHTML);
 });
 
-function appendNewThing(document, el, i) {
-  let container = document.createElement("div");
-  container.className = "child-holder";
+function appendNewCell(document, el, i) {
+  let container = document.createElement("a");
+  if (!el) container.className =  "child-holder blank";
+  else {
+    container.className = "child-holder";
+    container.href = 'javascript:alert("clicked")';
+  }
   let newP = document.createElement("p");
   newP.className = "child";
   let newContent = document.createTextNode(!el ? '' : el);
@@ -26,7 +28,6 @@ function appendNewThing(document, el, i) {
   container.appendChild(newP);
   document.getElementsByClassName("flex-container")[i].appendChild(container);
 }
-
 function createCointainer(document) {
   const container = document.createElement("div");
   container.className = 'flex-container';
