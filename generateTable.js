@@ -37,7 +37,13 @@ function generateTable(matrix) {
         const rowShuffled = _.shuffle(matrix[i]);
         const toRemove = [];
         for (let j = 0; j < 4; j++) toRemove.push(rowShuffled.shift())
-        for (let z = 0; z < matrix[i].length; z++) if (toRemove.includes(matrix[i][z])) matrix[i][z] = null;
+        for (let z = 0; z < matrix[i].length; z++) if (toRemove.includes(matrix[i][z])){
+            matrix[i][z] = null;
+        } 
     }
     return matrix;
 }
+
+// $(document).ready(function() {
+// 	$("body").css("background-color", "hsla(" + Math.floor(Math.random() * (360)) + ", 75%, 58%, 1)");
+// });
