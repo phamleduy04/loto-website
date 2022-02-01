@@ -5,10 +5,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-    <script type="text/javascript"> function changeClass(id) {
-        if (id.className.includes('clicked')) id.className = 'child-holder';
-        else id.className = 'child-holder clicked';
-    }
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function changeClass(id) {
+            if (!(id.className.includes('blank'))) {
+                if (id.className.includes('clicked'))
+                    id.className = 'child-holder';
+                else
+                    id.className = 'child-holder clicked';
+            }
+        }
+        $(document).ready(function () {
+            $(".blank").css("background-color", "hsla(" + Math.floor(Math.random() * (360)) + ", 75%, 58%, 1)");
+        });
     </script>
     <title>Lô Tô</title>
     <style>
@@ -39,7 +48,7 @@
             text-decoration: none;
         }
 
-        .flex-container > .child-holder.clicked {
+        .flex-container>.child-holder.clicked {
             background-color: red;
         }
 
@@ -48,9 +57,6 @@
             font-size: 1em;
         }
 
-        .flex-container>.child-holder.blank {
-            background-color: gray;
-        }
     </style>
 </head>
 
