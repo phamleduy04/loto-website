@@ -5,6 +5,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <script type="text/javascript"> function changeClass(id) {
+        if (id.className.includes('clicked')) id.className = 'child-holder';
+        else id.className = 'child-holder clicked';
+    }
+    </script>
     <title>Lô Tô</title>
     <style>
         body {
@@ -32,6 +37,10 @@
             line-height: 0.1px;
             font-size: 2em;
             text-decoration: none;
+        }
+
+        .flex-container > .child-holder.clicked {
+            background-color: red;
         }
 
         .child {
