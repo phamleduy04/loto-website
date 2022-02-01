@@ -22,7 +22,6 @@ function appendNewCell(document, el, i, index) {
   container.href = `javascript:changeClass(document.getElementsByClassName("flex-container")[${i}].getElementsByClassName("child-holder")[${index}])`;
   let newP = document.createElement("p");
   newP.className = "child";
-  if (!el) newP.href = 'javascript:changeClass()';
   let newContent = document.createTextNode(!el ? '' : el);
   newP.appendChild(newContent);
   container.appendChild(newP);
