@@ -19,7 +19,7 @@ function appendNewCell(document, el, i, index) {
   let container = document.createElement("a");
   if (!el) container.className =  "child-holder blank";
   else container.className = "child-holder";
-  container.href = `javascript:changeClass(document.getElementsByClassName("flex-container")[${i}].getElementsByClassName("child-holder")[${index}])`;
+  container.href = `javascript:changeClass(document.getElementsByClassName("flex-container")[${i}].getElementsByClassName("child-holder")[${index}], ${i}, ${index})`;
   let newP = document.createElement("p");
   newP.className = "child";
   let newContent = document.createTextNode(!el ? '' : el);
