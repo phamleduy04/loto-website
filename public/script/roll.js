@@ -15,7 +15,7 @@ function list() {
 
 function verify() {
     const numbers = prompt("Nhập các số cần kiểm tra (cách nhau bởi dấu cách)\nVD: 30 69 44");
-    if (numbers === null) return;
+    if (!numbers) return;
     const list = numbers.split(" ");
     if (list.length == 0) return;
     const result = _.difference(list.map(el => parseInt(el)), pickedList).filter(el => !isNaN(el));
