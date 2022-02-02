@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
   const document = jsdom.window.document;
   const matrix = generateTable();
   for (let i = 0; i < matrix.length; i++) {
-    createCointainer(document);
+    createContainer(document);
     matrix[i].forEach((el, index) => appendNewCell(document, el, i, index));
   }
   res.status(200).send(document.documentElement.outerHTML);
@@ -28,10 +28,12 @@ function appendNewCell(document, el, i, index) {
   document.getElementsByClassName("flex-container")[i].appendChild(container);
 }
 
-function createCointainer(document) {
+function createContainer(document) {
   const container = document.createElement("div");
   container.className = 'flex-container';
-  document.body.appendChild(container);
+  document.getElementById("main").appendChild(container);
 }
 
 module.exports = router;
+
+
