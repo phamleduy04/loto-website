@@ -6,11 +6,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <script src="script/main.js"></script>
     <script src="script/roll.js"></script>
     <script>window.localStorage.clear();</script>
-    
+
     <title>Bảng chơi Lô Tô random</title>
     <style>
         body {
@@ -18,50 +20,30 @@
             font-family: 'Anton', sans-serif;
             background-color: #181E25;
             display: grid;
-            grid-template-columns: 30% 1fr;
+            grid-template-columns: 40% 1fr;
             align-items: center;
             justify-content: center;
             text-align: center;
+            box-sizing: border-box;
+        }
+
+        nav {
+            margin-top: 10px;
         }
 
         .btn {
             font-family: 'Anton', sans-serif;
-            border: 0;
-            padding: 0 30px;
-            line-height: 2.5;
-            font-size: 1em;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            text-shadow: 1px 1px 1px #000;
-            border-radius: 10px;
-            background-color: rgba(220, 0, 0, 1);
-            box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
-                inset -2px -2px 3px rgba(0, 0, 0, .6);
-            margin: 2em 0;
-        }
-
-        .btn1 {
-            background-color: #4CAF50;
-        }
-
-        .btn2 {
-            background-color: #008CBA;
-        }
-
-        .btn3 {
-            background-color: #f44336;
+            margin: 5px;
         }
 
         #main {
+            min-height: 100vh;
             display: flex;
             flex-wrap: nowrap;
             flex-direction: column;
-            align-items: center;
-            justify-content: stretch;
-            min-height: 100vh;
+            justify-content: center;
             position: relative;
+            text-align: center;
         }
 
         .flex-container {
@@ -77,7 +59,7 @@
             margin: 0.2em;
             text-align: center;
             line-height: 0.1px;
-            font-size: 2em;
+            font-size: 1.8em;
             text-decoration: none;
         }
 
@@ -87,46 +69,60 @@
 
         .child {
             color: black;
-            font-size: 1em;
+            padding: 0;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            margin-bottom: 0;
+            margin-top: 1em;
         }
 
         @media only screen and (max-width: 450px) {
             body {
-                margin: 0;
-                font-family: 'Anton', sans-serif;
-                background-color: #181E25;
                 display: block;
+            }
+            #main {
+                justify-content: flex-start;
                 align-items: center;
-                justify-content: center;
-                text-align: center;
             }
             .flex-container>.child-holder {
-                background-color: #f1f1f1;
-                width: 1.25em;
-                height: 2em;
-                margin: 0.2em;
-                text-align: center;
-                line-height: 0.1px;
+                line-height: 0.3px;
                 font-size: 1.5em;
-                text-decoration: none;
             }
             .btn {
-                font-family: 'Anton', sans-serif;
-                border: 0;
                 padding: 0 10px;
-                line-height: 2.5;
-                font-size: 0.5em;
-                margin: 1em 0;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
             }
         }
+        
+        @media only screen and (max-width: 560px) {
+            .btn {
+                font-size: 12px;
+            }
+        }
+
+        @media only screen and (max-width: 900px) {
+            .flex-container>.child-holder {
+                font-size: 1.5em;
+            }
+        }
+
+        @media only screen and (min-width: 1200px) {
+            .flex-container>.child-holder {
+                font-size: 1.9em;
+            }
+        }
+
     </style>
 </head>
 
 <body>
     <nav>
-        <button class="btn btn1" onclick="roll()">Quay số</button><br />
-        <button class="btn btn2" onclick="list()">Các số đã quay</button><br />
-        <button class="btn btn3" onclick="verify()">Xác thực số đã quay</button>
+        <button class="btn btn-success" onclick="roll()">Quay số</button><br />
+        <button class="btn btn-danger" onclick="list()">Các số đã quay</button><br />
+        <button class="btn btn-warning" onclick="verify()">Xác thực số đã quay</button>
     </nav>
     <div id="main"></div>
 </body>
