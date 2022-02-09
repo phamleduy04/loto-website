@@ -1,6 +1,7 @@
 let numbers = [];
-for (let i = 1; i < 100; i++) numbers.push(i);
+for (let i = 1; i < 91; i++) numbers.push(i);
 numbers = _.shuffle(numbers);
+
 const pickedList = [];
 function roll() {
     const pick = numbers.shift();
