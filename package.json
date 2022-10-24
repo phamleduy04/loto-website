@@ -6,21 +6,20 @@
     "dev": "cross-env NODE_ENV=development nodemon ./bin/www"
   },
   "dependencies": {
-    "axios": "^0.26.1",
-    "cheerio": "^1.0.0-rc.10",
+    "cheerio": "^1.0.0-rc.12",
     "debug": "^4.3.4",
-    "dotenv": "^16.0.0",
-    "express": "4.17.3",
+    "dotenv": "^16.0.3",
+    "express": "4.18.2",
     "http-errors": "^2.0.0",
-    "jsdom": "^19.0.0",
+    "jsdom": "^20.0.1",
     "lodash": "^4.17.21",
     "morgan": "1.10.0",
     "random": "^3.0.6"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "eslint": "^8.12.0",
-    "nodemon": "^2.0.15",
+    "eslint": "^8.26.0",
+    "nodemon": "^2.0.20",
     "pug": "^3.0.2"
   }
 }
