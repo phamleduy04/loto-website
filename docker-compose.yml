@@ -1,0 +1,8 @@
+version: '3.6'
+
+services:
+  loto-website:
+    image: ghcr.io/phamleduy04/loto-website:latest
+    container_name: loto-website
+    ports:
+      - 3000:3000
